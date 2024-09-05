@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const PokemonList1 = () => {
   const[searchTerm,setSearchTerm]=useState("")
-  const[pokemon,setPokemonData]=useState([])
+  const[pokemonData,setPokemonData]=useState([])
   useEffect(()=>{
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151")
     .then(response=>{
@@ -18,6 +18,9 @@ promise.all(fetches)
 
 }
 
+const filteredPokemon= pokemonData.filter(pokemonData=>
+  pokemon.toLowerCase().include.toLowerCase()
+)
   )
   
   return (
