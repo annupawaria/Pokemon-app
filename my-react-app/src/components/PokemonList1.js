@@ -8,19 +8,15 @@ const PokemonList1 = () => {
   const[pokemonData,setPokemonData]=useState([])
   useEffect(()=>{
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151")
-    .then(response=>{
-const fetches =  response.data.results.map(pokemon=>axios.get(pokemon.url)  )
-promise.all(fetches)
-  .then(response=>setPokemonData(response.map(res=>key.res))
-  .catch(err=>console.error(err))
-)
-.catch
-
+    .then((fetches)=>{
+const response=response.data.results.map(pokemon=>axios.get(pokemon.url))
+  Promise.all(fetches)
+  .then()
+.catch(err=>console.Error(err))
+      })
+      .catch(err=>console.Error(err))
 }
 
-const filteredPokemon= pokemonData.filter(pokemonData=>
-  pokemon.toLowerCase().include.toLowerCase()
-)
   )
   
   return (
