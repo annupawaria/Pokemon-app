@@ -12,11 +12,11 @@ const PokemonList1 = () => {
 const response=response.data.results.map(pokemon=>axios.get(pokemon.url))
   Promise.all(fetches)
   .then()
-.catch(err=>console.Error(err))
+.catch(err=>console.error(err))
       })
-      .catch(err=>console.Error(err))
-}
-
+      .catch(err=>console.error(err))
+},[])
+  const filteredpokemon=pokemon.filter(pokemon=>pokemon.name.LowerCase().includes(searchTerm.toLowerCase())
   )
   
   return (
